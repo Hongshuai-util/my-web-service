@@ -1,5 +1,6 @@
 package com.myweb.module.api.controller;
 
+import com.myweb.common.result.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping(value = "/hello")
-    public String hello(){
-        return "hello";
+    public Result<String> hello(){
+        Result<String> success = Result.success("hello");
+        return success;
     }
 }
