@@ -1,4 +1,4 @@
-package com.myweb.common.util;
+package com.myweb.common.core.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -88,3 +88,4 @@ public class DecimalUtil {
         System.out.println(divide(v1, v2, 3));
     }
 }
+

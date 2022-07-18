@@ -3,16 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+        <artifactId>common</artifactId>
         <groupId>com.myweb</groupId>
-        <artifactId>modules</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.myweb.module</groupId>
-    <artifactId>api</artifactId>
-
-    <description>myWeb接口模块</description>
+    <artifactId>service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,13 +17,18 @@
     </properties>
 
     <dependencies>
-        <!-- service通用模块 -->
+        <!-- core模块 -->
         <dependency>
             <groupId>com.myweb</groupId>
-            <artifactId>service</artifactId>
+            <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <!-- web 启动包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

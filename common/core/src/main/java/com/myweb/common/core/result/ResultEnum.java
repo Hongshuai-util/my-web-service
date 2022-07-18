@@ -1,4 +1,4 @@
-package com.myweb.common.result;
+package com.myweb.common.core.result;
 
 /**
  * @author chs

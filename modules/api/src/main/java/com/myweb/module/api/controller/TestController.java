@@ -1,6 +1,6 @@
 package com.myweb.module.api.controller;
 
-import com.myweb.common.result.Result;
+import com.myweb.common.core.result.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
