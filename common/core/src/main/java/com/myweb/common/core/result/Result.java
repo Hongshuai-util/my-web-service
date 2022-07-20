@@ -40,8 +40,13 @@ public class Result<T> {
         return result;
     }
 
-    public static <T> Result<T> fail(T data){
-        Result<T> result = new Result<>(ResultEnum.FAIL.getCode(), ResultEnum.FAIL.getMessage(), data);
+    public static Result<Object> fail(String message){
+        Result<Object> result = new Result<>(ResultEnum.FAIL.getCode(), message, null);
+        return result;
+    }
+
+    public static Result<Object> error(){
+        Result<Object> result = new Result<>(ResultEnum.ERROR.getCode(), ResultEnum.ERROR.getMessage(), null);
         return result;
     }
 }
