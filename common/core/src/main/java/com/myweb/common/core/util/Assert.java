@@ -59,4 +59,11 @@ public class Assert {
             throw new ServiceException(message);
         }
     }
+
+    public static void isTrue(Boolean obj, String message){
+        if(obj == null || !obj){
+            throw new ServiceException(message);
+        }
+    }
+
 }

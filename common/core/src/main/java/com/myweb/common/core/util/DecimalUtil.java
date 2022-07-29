@@ -81,11 +81,5 @@ public class DecimalUtil {
         return divide;
     }
 
-
-    public static void main(String[] args) {
-        BigDecimal v1 = new BigDecimal("1");
-        BigDecimal v2 = new BigDecimal("3");
-        System.out.println(divide(v1, v2, 3));
-    }
 }
 
