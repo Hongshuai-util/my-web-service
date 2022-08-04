@@ -7,16 +7,17 @@
 -->
 <configuration  scan="true" scanPeriod="60 seconds" debug="true">
 
-    <springProperty scope="context" name="log.path" source="log.path" />
+    <!-- 引入其他配置文件中的属性 -->
+    <property resource="log.properties" />
+    <!-- 引入sprig环境中的配置属性 -->
     <springProperty scope="context" name="server.servlet.context-path" source="server.servlet.context-path" />
     <springProperty scope="context" name="spring.application.name" source="spring.application.name" />
+    
     <!-- 应用名称，可以通过%contextName来使用，默认值为“default” -->
     <contextName>my-web-service</contextName>
 
 
-    <!-- 设置一些变量，可以通过${}的形式使用：${log.path} -->
-<!--    <property name="log.path" value="C:/Users/leilu/Desktop" />-->
-    <property name="a" value="/a" />
+    <!-- 设置一些变量，可以通过${}的形式使用：${log.dir} -->
     <property name="pattern" value="%d{HH:mm:ss.SSS} [%thread] [%-5level] %logger{36} - %msg%n" />
     <property name="file.pattern" value="%d [%thread] %-5level %logger{36} - %msg%n" />
 
@@ -48,11 +49,11 @@
             如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
             的日志改名为今天的日期。即，<File> 的日志都是当天的。
         -->
-        <File>${log.path}${server.servlet.context-path}/${spring.application.name}/info.log</File>
+        <File>${log.dir}${server.servlet.context-path}/${spring.application.name}/info.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
-            <FileNamePattern>${log.path}${server.servlet.context-path}/${spring.application.name}/info.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${log.dir}${server.servlet.context-path}/${spring.application.name}/info.%d{yyyy-MM-dd}.log</FileNamePattern>
             <!--只保留最近30天的日志-->
             <maxHistory>30</maxHistory>
             <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
@@ -74,11 +75,11 @@
             如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
             的日志改名为今天的日期。即，<File> 的日志都是当天的。
         -->
-        <File>${log.path}${server.servlet.context-path}/${spring.application.name}/error.log</File>
+        <File>${log.dir}${server.servlet.context-path}/${spring.application.name}/error.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
-            <FileNamePattern>${log.path}${server.servlet.context-path}/${spring.application.name}/error.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${log.dir}${server.servlet.context-path}/${spring.application.name}/error.%d{yyyy-MM-dd}.log</FileNamePattern>
             <!--只保留最近30天的日志-->
             <maxHistory>30</maxHistory>
             <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
