@@ -26,7 +26,17 @@
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <!-- 指定jar包的名称 -->
+        <finalName>my-web-service-api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
