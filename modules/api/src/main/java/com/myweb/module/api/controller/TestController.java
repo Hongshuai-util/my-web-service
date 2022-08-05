@@ -2,6 +2,7 @@ package com.myweb.module.api.controller;
 
 import com.myweb.common.core.exception.ServiceException;
 import com.myweb.common.core.result.Result;
+import com.myweb.common.core.util.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class TestController {
 
     @GetMapping(value = "/hello")
     public Result<String> hello(Integer a){
+        Assert.isEmpty(a);
         int i = 6/a;
         if(i == 1){
             throw new ServiceException("i = 1");
