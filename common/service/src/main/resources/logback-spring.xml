@@ -8,11 +8,12 @@
 <configuration  scan="true" scanPeriod="60 seconds" debug="false">
 
     <!-- 引入其他配置文件中的属性 -->
-    <property resource="log.properties" />
+<!-- <property resource="application.properties" />-->
     <!-- 引入sprig环境中的配置属性 -->
     <springProperty scope="context" name="server.servlet.context-path" source="server.servlet.context-path" />
     <springProperty scope="context" name="spring.application.name" source="spring.application.name" />
-    
+    <springProperty scope="context" name="log.dir" source="log.dir" />
+
     <!-- 应用名称，可以通过%contextName来使用，默认值为“default” -->
     <contextName>my-web-service</contextName>
 
